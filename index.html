@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winspiration | 專業顧問與教練服務</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- 全域設定 --- */
+        :root {
+            --primary-color: #2c3e50; 
+            --accent-color: #d35400;  
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans TC', sans-serif; }
+        body { color: var(--text-color); background-color: var(--bg-color); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- 導覽列 --- */
+        header {
+            position: fixed; top: 0; width: 100%; background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center; padding: 15px 5%;
+        }
+        .logo { font-size: 24px; font-weight: 700; color: var(--primary-color); }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a:hover { color: var(--accent-color); }
+        .btn-cta-small { background: var(--accent-color); color: white; padding: 8px 15px; border-radius: 5px; transition: 0.3s; }
+        .btn-cta-small:hover { background: #e67e22; color: white; }
+
+        /* --- 英雄區塊 (Hero Section) --- */
+        .hero {
+            height: 100vh;
+            /* 注意！請確保你上傳的公司照片檔名叫做 company-bg.jpg 
+               如果你上傳的檔名不同，請把下面括號裡的 company-bg.jpg 換成你的檔名
+            */
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('company-bg.jpg') center/cover;
+            
+            /* 如果你還沒準備好照片，可以先在前面加上 // 註解掉上面那行，並把下面這行的 // 刪掉，先用預設圖庫頂替 */
+            /* background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover; */
+            
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 0 20px;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; }
+        .btn-main {
+            background: var(--accent-color); color: white; padding: 15px 30px; font-size: 1.1rem; border-radius: 5px; transition: 0.3s;
+        }
+        .btn-main:hover { background: #e67e22; transform: translateY(-3px); }
+
+        /* --- 服務項目區塊 --- */
+        .section { padding: 80px 5%; text-align: center; }
+        .section-title { font-size: 2rem; color: var(--primary-color); margin-bottom: 40px; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card {
+            background: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .card i { font-size: 40px; color: var(--accent-color); margin-bottom: 20px; }
+        .card h3 { margin-bottom: 15px; color: var(--primary-color); }
+
+        /* --- 報名與聯絡表單 --- */
+        .contact-section { background: var(--primary-color); color: white; padding: 80px 5%; }
+        .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; color: var(--text-color); }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit;
+        }
+        .submit-btn {
+            width: 100%; background: var(--accent-color); color: white; padding: 12px; border: none; border-radius: 4px; font-size: 1.1rem; cursor: pointer; transition: 0.3s;
+        }
+        .submit-btn:hover { background: #e67e22; }
+
+        /* --- 頁尾 --- */
+        footer { background: #1a252f; color: #ccc; text-align: center; padding: 20px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Winspiration</div>
+        <nav class="nav-links">
+            <a href="#services">服務項目</a>
+            <a href="#contact" class="btn-cta-small">預約諮詢</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>引領團隊潛能，創造卓越價值</h1>
+        <p>我們提供專業的企業顧問與高階教練服務，系統化梳理品牌與組織架構，協助您在市場中脫穎而出。</p>
+        <a href="#contact" class="btn-main">立即啟動專案</a>
+    </section>
+
+    <section id="services" class="section">
+        <h2 class="section-title">我們的核心服務</h2>
+        <div class="grid-container">
+            <div class="card">
+                <i class="fas fa-users-cog"></i>
+                <h3>企業內訓與工作坊</h3>
+                <p>客製化主題學程，營造高互動體驗式共學場域，激發團隊創造力與向心力。</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h3>品牌策略顧問</h3>
+                <p>從市場洞察出發，協助企業品牌定位、架構梳理，打造強勢品牌影響力。</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-user-tie"></i>
+                <h3>高階主管教練</h3>
+                <p>一對一專業教練陪跑計畫，協助領導者突破盲點，提升決策與管理效能。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2 style="margin-bottom: 30px; text-align: center;">與我們聊聊您的需求</h2>
+        <div class="form-container">
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">姓名 / 公司名稱 *</label>
+                    <input type="text" id="name" name="name" required placeholder="請輸入您的姓名或公司">
+                </div>
+                <div class="form-group">
+                    <label for="email">聯絡 Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="example@company.com">
+                </div>
+                <div class="form-group">
+                    <label for="service">您有興趣的服務 *</label>
+                    <select id="service" name="service">
+                        <option value="企業內訓">企業內訓與工作坊</option>
+                        <option value="品牌策略">品牌策略顧問</option>
+                        <option value="高階教練">高階主管教練</option>
+                        <option value="其他">其他合作提案</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">需求簡述 *</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="請簡單描述您目前遇到的挑戰或需求..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">送出諮詢申請</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Winspiration 顧問團隊. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
