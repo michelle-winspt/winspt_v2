@@ -3,212 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>贏想品牌策略 | Winspiration | 企業顧問與組織轉型</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>IN WINspiration | 贏想品牌策略</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* --- 全域設定 --- 
-           這裡定義了基於 PDF 簡介的深藍色 (#1c2833) 與紅色 (#e74c3c)
-        */
+        /* --- 品牌專屬頂級色彩計畫 --- */
         :root {
-            --primary: #1c2833; 
-            --secondary: #e74c3c; 
-            --bg-light: #fdfdfd;
-            --text-main: #2c3e50;
-            --transition: all 0.3s ease;
+            --brand-navy: #0B132B;       /* 極深海藍：背景主色 */
+            --brand-navy-light: #1C2541; /* 稍淺的藍：卡片與區塊 */
+            --brand-red: #D62828;        /* 贏想紅：按鈕與強調色 */
+            --text-light: #F8F9FA;       /* 主文字：柔和白 */
+            --text-muted: #A1A8B6;       /* 次要文字：灰藍色 */
+            --gold-accent: #D4AF37;      /* 香檳金：微小點綴增加高級感 */
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans TC', sans-serif; letter-spacing: 0.5px; }
-        body { color: var(--text-main); background: var(--bg-light); line-height: 1.8; }
-        a { text-decoration: none; color: inherit; }
 
-        /* --- 導覽列 --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background-color: var(--brand-navy); 
+            color: var(--text-light); 
+            font-family: 'Noto Sans TC', sans-serif; 
+            line-height: 1.7; 
+            overflow-x: hidden;
+        }
+
+        /* 權威感標題設定 */
+        h1, h2, h3, .serif-text { font-family: 'Noto Serif TC', serif; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- 極簡導覽列 --- */
         header {
-            position: fixed; top: 0; width: 100%; padding: 15px 5%; z-index: 1000;
+            position: fixed; top: 0; width: 100%; padding: 25px 5%; z-index: 1000;
             display: flex; justify-content: space-between; align-items: center;
-            background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            background: rgba(11, 19, 43, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .logo { font-size: 24px; font-weight: 700; color: var(--primary); }
-        .nav-links { display: flex; gap: 30px; align-items: center; }
-        .nav-links a:not(.btn-cta-small):hover { color: var(--secondary); }
-        .btn-cta-small { 
-            background: var(--secondary); color: white !important; padding: 10px 24px; 
-            border-radius: 30px; transition: var(--transition); font-weight: 500; 
-        }
-        .btn-cta-small:hover { background: #c0392b; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(192, 57, 43, 0.3); }
+        .logo { font-size: 22px; font-weight: 700; letter-spacing: 2px; }
+        .logo span { color: var(--brand-red); }
+        .nav-links { display: flex; gap: 40px; font-size: 0.9rem; letter-spacing: 1px; }
+        .nav-links a:hover { color: var(--brand-red); }
+        .btn-nav { border: 1px solid var(--brand-red); padding: 8px 24px; border-radius: 2px; }
+        .btn-nav:hover { background: var(--brand-red); color: white; }
 
-        /* --- 英雄區塊 --- */
+        /* --- 史詩級英雄區塊 --- */
         .hero {
-            height: 100vh; min-height: 600px;
-            /* 請確保你上傳的公司照片檔名叫做 company-bg.jpg，或者替換下面的網址 */
-            background: linear-gradient(rgba(28, 40, 51, 0.9), rgba(28, 40, 51, 0.6)), url('company-bg.jpg') center/cover;
-            /* 若還沒上傳照片，可以先用下面這行預設圖庫頂替，並將上面那行註解掉 */
-            /* background: linear-gradient(rgba(28, 40, 51, 0.9), rgba(28, 40, 51, 0.6)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover; */
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            padding: 0 10%; color: white; margin-top: 80px; /* 避開導覽列 */
+            height: 100vh; display: flex; align-items: center; padding: 0 10%;
+            position: relative; overflow: hidden;
+            /* 背景圖片加上極深的藍色漸層遮罩，確保文字絕對清晰 */
+            background: linear-gradient(90deg, var(--brand-navy) 40%, rgba(11, 19, 43, 0.4) 100%), 
+                        url('company-bg.jpg') center/cover no-parallax;
+            /* 若無照片先用這行測試：background: linear-gradient(90deg, var(--brand-navy) 50%, rgba(11, 19, 43, 0.2) 100%), url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover; */
         }
-        .hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 25px; line-height: 1.2; }
-        .hero p { font-size: 1.25rem; margin-bottom: 45px; max-width: 700px; opacity: 0.95; font-weight: 300; }
-        .btn-main {
-            background: white; color: var(--primary); padding: 16px 45px; font-size: 1.15rem; font-weight: 700;
-            border-radius: 30px; transition: var(--transition); display: inline-flex; align-items: center; gap: 12px;
-        }
-        .btn-main:hover { background: var(--secondary); color: white; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
-
-        /* --- 核心理念區塊 (新增) --- */
-        .philosophy-section { padding: 100px 10%; background: #eee; }
-        .phi-wrapper { display: flex; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: center; }
-        .phi-text { flex: 1.5; }
-        .phi-tagline { color: var(--secondary); font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 2px; }
-        .phi-title { font-size: 2.8rem; color: var(--primary); margin-top: 10px; margin-bottom: 25px; }
-        .phi-desc { font-size: 1.1rem; color: #555; }
-
-        /* --- 服務項目區塊 --- */
-        .section { padding: 100px 5%; background: var(--bg-light); text-align: center; }
-        .section-header { margin-bottom: 70px; }
-        .section-subtitle { color: var(--secondary); font-weight: 700; letter-spacing: 2px; font-size: 0.95rem; text-transform: uppercase; }
-        .section-title { font-size: 2.8rem; color: var(--primary); margin-top: 10px; }
+        .hero-content { max-width: 800px; z-index: 2; margin-top: 50px;}
+        .hero-tagline { color: var(--brand-red); font-weight: 500; letter-spacing: 4px; font-size: 1rem; margin-bottom: 20px; display: block; text-transform: uppercase; }
+        .hero h1 { font-size: 4.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 30px; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 50px; max-width: 600px; font-weight: 300; }
         
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
-        .card {
-            background: white; padding: 60px 50px; border-radius: 16px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: var(--transition);
-            border-bottom: 5px solid transparent;
+        .btn-primary {
+            background: var(--brand-red); color: white; padding: 18px 40px; font-size: 1.1rem;
+            letter-spacing: 2px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 15px;
+            transition: all 0.4s ease;
         }
-        .card:hover { 
-            transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.07); 
-            border-bottom: 5px solid var(--secondary);
-        }
-        .card i { font-size: 50px; color: var(--secondary); margin-bottom: 30px; }
-        .card h3 { font-size: 1.6rem; margin-bottom: 20px; color: var(--primary); }
-        .card p { color: #555; font-weight: 300; }
+        .btn-primary:hover { background: #b81d1d; padding-right: 30px; padding-left: 50px; }
 
-        /* --- 信任區塊 (修改為靜態) --- */
-        .trust-section { background: #eee; padding: 60px 10%; text-align: center;}
-        .trust-title { font-weight: 700; color: #7f8c8d; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px;}
-        .logos-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 60px; opacity: 0.7; font-size: 1.6rem; font-weight: bold; color: #95a5a6;}
-
-        /* --- 報名與聯絡表單 --- */
-        .contact-section { background: var(--primary); color: white; padding: 100px 5%; }
-        .contact-wrapper { display: flex; flex-wrap: wrap; gap: 70px; max-width: 1200px; margin: 0 auto; align-items: flex-start; }
-        .contact-info { flex: 1; min-width: 320px; }
-        .contact-info h2 { font-size: 3rem; margin-bottom: 25px; }
-        .contact-info p.lead { color: #bdc3c7; margin-bottom: 45px; font-weight: 300; font-size: 1.15rem; }
-        .info-item { margin-bottom: 20px; font-size: 1.1rem; font-weight: 300; }
-        .info-item i { color: var(--secondary); margin-right: 15px; width: 25px; text-align: center;}
+        /* --- 關於贏想與創辦人 (PDF 內容) --- */
+        .about-section { padding: 120px 10%; background: var(--brand-navy); border-top: 1px solid rgba(255,255,255,0.05); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .about-text h2 { font-size: 2.8rem; margin-bottom: 30px; line-height: 1.3; }
+        .about-text h2 span { color: var(--brand-red); font-style: italic; }
+        .about-text p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 20px; font-weight: 300; }
         
-        .form-container { flex: 1.5; min-width: 380px; background: white; padding: 60px; border-radius: 16px; color: var(--text-main); }
-        .form-group { margin-bottom: 30px; text-align: left;}
-        .form-group label { display: block; margin-bottom: 10px; font-weight: 500; font-size: 1rem; }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 16px; border: 1px solid #e0e0e0; border-radius: 8px; font-family: inherit;
-            background: #f9f9f9; transition: var(--transition); outline: none; font-size: 1rem;
-        }
-        .form-group input:focus, .form-group textarea:focus { border-color: var(--secondary); background: white; box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.1); }
-        .submit-btn {
-            width: 100%; background: var(--secondary); color: white; padding: 18px; border: none; 
-            border-radius: 8px; font-size: 1.2rem; font-weight: 700; cursor: pointer; transition: var(--transition);
-        }
-        .submit-btn:hover { background: #c0392b; }
+        .founder-box { background: var(--brand-navy-light); padding: 50px; border-left: 4px solid var(--brand-red); position: relative; }
+        .founder-box h3 { font-size: 1.8rem; margin-bottom: 5px; }
+        .founder-box .title { color: var(--brand-red); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 25px; display: block;}
+        .founder-list { list-style: none; color: var(--text-muted); font-weight: 300; }
+        .founder-list li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 15px; }
+        .founder-list i { color: var(--gold-accent); margin-top: 6px; font-size: 0.8rem; }
 
-        /* --- 頁尾 --- */
-        footer { background: #111a21; color: #7f8c8d; text-align: center; padding: 40px; font-size: 1rem; font-weight: 300; }
+        /* --- 核心服務區塊 (PDF 內容) --- */
+        .services-section { padding: 120px 5%; background: #070D1F; /* 比主背景更深一點的藍 */ }
+        .section-header { text-align: center; margin-bottom: 80px; }
+        .section-header h2 { font-size: 3rem; }
+        .section-header p { color: var(--brand-red); letter-spacing: 3px; font-size: 0.9rem; margin-top: 15px; text-transform: uppercase; }
+
+        .service-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1300px; margin: 0 auto; }
+        .card { 
+            background: var(--brand-navy); padding: 60px 40px; 
+            border: 1px solid rgba(255,255,255,0.05); transition: 0.4s;
+            position: relative; overflow: hidden;
+        }
+        .card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+            background: var(--brand-red); transform: scaleX(0); transform-origin: left; transition: 0.4s;
+        }
+        .card:hover { transform: translateY(-10px); background: var(--brand-navy-light); border-color: rgba(255,255,255,0.1); }
+        .card:hover::before { transform: scaleX(1); }
+        .card i { font-size: 40px; color: var(--text-light); margin-bottom: 30px; opacity: 0.5; }
+        .card h3 { font-size: 1.8rem; margin-bottom: 20px; }
+        .card p { color: var(--text-muted); font-weight: 300; font-size: 1rem; line-height: 1.8; }
+        .card ul { list-style: none; margin-top: 25px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .card ul li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; }
+        .card ul li::before { content: '•'; color: var(--brand-red); margin-right: 10px; }
+
+        /* --- 高端聯絡表單 --- */
+        .contact-section { padding: 120px 10%; background: var(--brand-navy); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; max-width: 1200px; margin: 0 auto; }
+        .contact-info h2 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; }
+        .contact-info p { color: var(--text-muted); font-size: 1.2rem; font-weight: 300; margin-bottom: 40px; }
+        
+        .form-group { margin-bottom: 30px; }
+        .form-input { 
+            width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding: 15px 0; color: white; font-size: 1.1rem; font-family: inherit; transition: 0.3s;
+        }
+        .form-input:focus { outline: none; border-bottom-color: var(--brand-red); }
+        .form-input::placeholder { color: rgba(255,255,255,0.3); font-weight: 300; }
+        
+        .btn-submit {
+            background: transparent; color: white; border: 1px solid var(--brand-red);
+            padding: 15px 40px; font-size: 1.1rem; letter-spacing: 2px; cursor: pointer;
+            transition: 0.4s; display: inline-block; margin-top: 20px; width: 100%;
+        }
+        .btn-submit:hover { background: var(--brand-red); }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 0.85rem; letter-spacing: 1px; }
+
+        /* 簡單的進場淡入動畫 */
+        .fade-in { animation: fadeIn 1.5s ease forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Winspiration</div>
+        <div class="logo">IN <span>WIN</span>spiration</div>
         <nav class="nav-links">
-            <a href="#about">核心理念</a>
-            <a href="#services">服務項目</a>
-            <a href="#contact" class="btn-cta-small">立即諮詢</a>
+            <a href="#about">關於贏想</a>
+            <a href="#services">專案服務</a>
+            <a href="#contact" class="btn-nav">啟動對話</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>贏想品牌策略<br>啟動卓越企業</h1>
-        <p>我們結合系統化思維與豐富實戰經驗，協助企業梳理品牌架構與組織潛能，打造無法被取代的競爭優勢。</p>
-        <a href="#contact" class="btn-main">啟動變革專案 <i class="fas fa-arrow-right"></i></a>
-    </section>
-
-    <section id="about" class="philosophy-section">
-        <div class="phi-wrapper">
-            <div class="phi-text">
-                <div class="phi-tagline">Inner & Outer Alignment</div>
-                <h2 class="phi-title">內外一致，系統化診斷</h2>
-                <p class="phi-desc">我們相信真正的改變源自內在。透過系統化的企業診斷與組織心智梳理，協助您對準商業目標，創造從內而外的卓越績效。</p>
-            </div>
-            <i class="fas fa-network-wired" style="font-size: 200px; color: #d0d3d4;"></i>
+        <div class="hero-content fade-in">
+            <span class="hero-tagline">Empower Your Moment of Glory</span>
+            <h1>助攻品牌與企業家的<br>榮耀時刻</h1>
+            <p>我們從組織結構與決策脈絡出發，結合品牌溝通的整體視角，協助企業在關鍵時刻，擬定並落實內外部對話策略。</p>
+            <a href="#contact" class="btn-primary">贏戰市場，放大影響 <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
 
-    <section id="services" class="section">
+    <section id="about" class="about-section">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>全線式經營視角<br><span>橫跨顧問與實戰</span></h2>
+                <p>我們以推助國內潛力企業飛躍成長、邁向新里程碑為志業。期許成為客戶專業、信賴的事業夥伴。</p>
+                <p>在成長階段與變動環境之中，我們不只提供策略，更協助凝聚團隊共識，確保策略落地執行。</p>
+            </div>
+            <div class="founder-box">
+                <span class="title">FOUNDER & CEO</span>
+                <h3>林易萱 Claudia</h3>
+                <p style="color:var(--text-muted); margin-bottom:20px; font-size:0.9rem;">#品牌溝通顧問 #贏想力教練</p>
+                <ul class="founder-list">
+                    <li><i class="fas fa-diamond"></i> 近20年實戰歷練，歷任跨國顧問公司、上市櫃高階經理人</li>
+                    <li><i class="fas fa-diamond"></i> 曾任台灣奧美集團總監、瓦城泰統集團品牌行銷協理</li>
+                    <li><i class="fas fa-diamond"></i> 具備全方位經營視野與落地執行力，服務跨國及本土企業</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
         <div class="section-header">
-            <div class="section-subtitle">Our Expertise</div>
-            <h2 class="section-title">顧問與教練服務</h2>
+            <h2>WHAT WE DO</h2>
+            <p>核心服務與專案執行</p>
         </div>
-        <div class="grid-container">
+        <div class="service-cards">
             <div class="card">
-                <i class="fas fa-search"></i>
-                <h3>品牌診斷與定位</h3>
-                <p>從市場洞察出發，系統化盤點品牌資源。協助企業確立核心價值與獨特地位，打造強勢品牌影響力。</p>
+                <i class="fas fa-chess-knight"></i>
+                <h3>成長策略諮詢</h3>
+                <p>我們可以是企業的戰略幕僚與共享 CGO (首席增長官)，為您打磨市場溝通與商務發展。</p>
+                <ul>
+                    <li>人才發展與企業文化深化</li>
+                    <li>發言人訓練與 CXO 個人品牌形塑</li>
+                    <li>合作資源引薦與募資計畫撰擬</li>
+                </ul>
             </div>
             <div class="card">
-                <i class="fas fa-user-tie"></i>
-                <h3>高階主管教練</h3>
-                <p>專為 C-level 及關鍵人才設計。透過深度對話打破思維慣性，提升決策效能與領導魅力。</p>
+                <i class="fas fa-users-cog"></i>
+                <h3>團隊陪跑教練</h3>
+                <p>從體質調理到強化動機，我們陪伴團隊優化組織架構，確保目標管理制度有效運作。</p>
+                <ul>
+                    <li>組織架構與職涯規劃優化</li>
+                    <li>目標管理制度 (OKR) 導入</li>
+                    <li>共識營與培訓計畫企劃執行</li>
+                </ul>
             </div>
             <div class="card">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <h3>企業內訓與團隊共創</h3>
-                <p>揚棄傳統單向授課，運用引導式技術與真實情境模擬，建立團隊共識與實戰產出。</p>
+                <i class="fas fa-handshake"></i>
+                <h3>專案執行夥伴</h3>
+                <p>深入企業內部，與總管理處或人資部門協作，將策略轉化為可落地的各項 SOP 與專案。</p>
+                <ul>
+                    <li>企業榮譽獎項/補助申請</li>
+                    <li>代理人制度與管理職級招聘</li>
+                    <li>特殊跨部門專案企劃與執行</li>
+                </ul>
             </div>
         </div>
     </section>
-
-    <div class="trust-section">
-        <div class="trust-title">他們選擇與 Winspiration 一起成長</div>
-        <div class="logos-container">
-            <span>TechGlobal</span> • <span>InnoCorp</span> • <span>NextGen Media</span> • <span>Apex Finance</span> • <span>GlobalLink</span> • <span>SolutionWorks</span>
-        </div>
-    </div>
 
     <section id="contact" class="contact-section">
-        <div class="contact-wrapper">
+        <div class="contact-grid">
             <div class="contact-info">
-                <h2>邁向變革的第一步</h2>
-                <p class="lead">留下您的資訊與初步想法，我們的顧問團隊將在 24 小時內與您聯繫，安排專屬的初步諮詢會議。</p>
-                <div class="info-item"><i class="fas fa-envelope"></i> hello@winspiration.com.tw</div>
-                <div class="info-item"><i class="fas fa-phone"></i> (02) 2345-6789</div>
-                <div class="info-item"><i class="fas fa-clock"></i> 週一至週五 9:00 - 18:00</div>
+                <h2>Let's build <br>something <br>great.</h2>
+                <p>準備好迎接企業的下一個榮耀時刻了嗎？<br>與我們的顧問團隊展開初步對話。</p>
+                <div style="margin-top: 40px; color: var(--text-muted);">
+                    <p><i class="fas fa-envelope" style="color:var(--brand-red); margin-right: 15px;"></i> hello@winspiration.com.tw</p>
+                </div>
             </div>
-            <div class="form-container">
+            <div class="contact-form">
                 <form action="#" method="POST">
                     <div class="form-group">
-                        <label for="name">姓名 / 職稱 *</label>
-                        <input type="text" id="name" required placeholder="例如：林大明 / 營運長">
+                        <input type="text" class="form-input" placeholder="您的姓名 / 職稱" required>
                     </div>
                     <div class="form-group">
-                        <label for="company">公司名稱 / 網址</label>
-                        <input type="text" id="company" placeholder="贏想股份有限公司 / https://...">
+                        <input type="text" class="form-input" placeholder="企業名稱">
                     </div>
                     <div class="form-group">
-                        <label for="email">企業 Email *</label>
-                        <input type="email" id="email" required placeholder="name@company.com">
+                        <input type="email" class="form-input" placeholder="工作 Email" required>
                     </div>
                     <div class="form-group">
-                        <label for="message">您目前遇到的主要挑戰？ *</label>
-                        <textarea id="message" rows="4" required placeholder="請簡略描述組織目前遇到的狀況或您期望達成的目標..."></textarea>
+                        <textarea class="form-input" rows="4" placeholder="請簡述您目前面臨的挑戰或需要的協助..." required></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">送出預約申請</button>
+                    <button type="submit" class="btn-submit">送出諮詢申請</button>
                 </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Winspiration Consulting 贏想品牌策略. All rights reserved.</p>
+        <p>&copy; 2026 贏想品牌策略有限公司 WINspiration Brand and Marketing Consultancy Ltd.</p>
     </footer>
 
 </body>
