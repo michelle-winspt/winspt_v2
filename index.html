@@ -4,245 +4,290 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IN WINspiration | 贏想品牌策略</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+    <meta name="description" content="鎖定一人群，聚焦一場景，擊穿一痛點，提供一解決方案。贏想品牌策略為您提供 A)課程培訓、B)Lumina測評、C)專案執行 的全方位賦能。">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        /* --- 品牌專屬頂級色彩計畫 --- */
         :root {
-            --brand-navy: #0B132B;       /* 極深海藍：背景主色 */
-            --brand-navy-light: #1C2541; /* 稍淺的藍：卡片與區塊 */
-            --brand-red: #D62828;        /* 贏想紅：按鈕與強調色 */
-            --text-light: #F8F9FA;       /* 主文字：柔和白 */
-            --text-muted: #A1A8B6;       /* 次要文字：灰藍色 */
-            --gold-accent: #D4AF37;      /* 香檳金：微小點綴增加高級感 */
+            --bg-dark: #070B14;        
+            --bg-surface: #0E1628;     
+            --bg-surface-light: #16223B; 
+            --gold-primary: #C5A059;   
+            --text-main: #F8F9FA;      
+            --text-muted: #94A3B8;     
+            --transition: all 0.4s ease;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            background-color: var(--brand-navy); 
-            color: var(--text-light); 
-            font-family: 'Noto Sans TC', sans-serif; 
-            line-height: 1.7; 
-            overflow-x: hidden;
-        }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Noto Sans TC', sans-serif; line-height: 1.8; overflow-x: hidden; }
 
-        /* 權威感標題設定 */
-        h1, h2, h3, .serif-text { font-family: 'Noto Serif TC', serif; }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        h1, h2, h3, .serif { font-family: 'Noto Serif TC', serif; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
 
-        /* --- 極簡導覽列 --- */
+        /* --- 導覽列 --- */
         header {
-            position: fixed; top: 0; width: 100%; padding: 25px 5%; z-index: 1000;
+            position: fixed; top: 0; width: 100%; padding: 20px 5%; z-index: 1000;
             display: flex; justify-content: space-between; align-items: center;
-            background: rgba(11, 19, 43, 0.95); backdrop-filter: blur(10px);
+            background: rgba(7, 11, 20, 0.95); backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .logo { font-size: 22px; font-weight: 700; letter-spacing: 2px; }
-        .logo span { color: var(--brand-red); }
-        .nav-links { display: flex; gap: 40px; font-size: 0.9rem; letter-spacing: 1px; }
-        .nav-links a:hover { color: var(--brand-red); }
-        .btn-nav { border: 1px solid var(--brand-red); padding: 8px 24px; border-radius: 2px; }
-        .btn-nav:hover { background: var(--brand-red); color: white; }
+        .logo { font-size: 1.5rem; font-weight: 700; letter-spacing: 2px; }
+        .logo span { color: var(--gold-primary); font-family: 'Noto Serif TC', serif; font-style: italic;}
+        .nav-links { display: flex; gap: 40px; font-size: 0.9rem; letter-spacing: 1px; align-items: center;}
+        .nav-links a:hover { color: var(--gold-primary); }
+        .btn-nav { border: 1px solid var(--gold-primary); padding: 8px 24px; color: var(--gold-primary); border-radius: 2px; }
 
-        /* --- 史詩級英雄區塊 --- */
+        /* --- 英雄區塊 (融入底層邏輯) --- */
         .hero {
-            height: 100vh; display: flex; align-items: center; padding: 0 10%;
-            position: relative; overflow: hidden;
-            /* 背景圖片加上極深的藍色漸層遮罩，確保文字絕對清晰 */
-            background: linear-gradient(90deg, var(--brand-navy) 40%, rgba(11, 19, 43, 0.4) 100%), 
-                        url('company-bg.jpg') center/cover no-parallax;
-            /* 若無照片先用這行測試：background: linear-gradient(90deg, var(--brand-navy) 50%, rgba(11, 19, 43, 0.2) 100%), url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover; */
+            min-height: 100vh; display: flex; align-items: center; padding: 120px 10% 80px;
+            background: linear-gradient(to right, var(--bg-dark) 45%, rgba(7, 11, 20, 0.4) 100%), url('company-bg.jpg') center/cover;
+            /* 測試用: background: linear-gradient(to right, var(--bg-dark) 45%, rgba(7, 11, 20, 0.4) 100%), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80') center/cover; */
         }
-        .hero-content { max-width: 800px; z-index: 2; margin-top: 50px;}
-        .hero-tagline { color: var(--brand-red); font-weight: 500; letter-spacing: 4px; font-size: 1rem; margin-bottom: 20px; display: block; text-transform: uppercase; }
-        .hero h1 { font-size: 4.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 30px; }
-        .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 50px; max-width: 600px; font-weight: 300; }
+        .hero-content { max-width: 850px; }
+        .logic-tag { 
+            display: inline-block; border: 1px solid var(--gold-primary); color: var(--gold-primary); 
+            padding: 6px 15px; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 25px; border-radius: 30px;
+        }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.2; margin-bottom: 30px; }
+        .hero h1 span { color: var(--gold-primary); }
+        .hero p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 40px; max-width: 650px; font-weight: 300; }
+        .btn-primary { background: var(--gold-primary); color: var(--bg-dark); padding: 18px 40px; font-weight: 600; letter-spacing: 2px; display: inline-flex; align-items: center; gap: 15px; }
+
+        /* --- 品牌思維路徑 (The Superpower Flow) --- */
+        .flow-section { padding: 80px 10%; background: var(--bg-surface); text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .flow-title { font-size: 1.8rem; margin-bottom: 50px; color: white; }
+        .flow-title span { color: var(--gold-primary); }
+        .flow-container { display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto; position: relative;}
+        .flow-container::before { content: ''; position: absolute; top: 40px; left: 10%; right: 10%; height: 2px; background: rgba(197, 160, 89, 0.2); z-index: 0;}
+        .flow-step { position: relative; z-index: 1; background: var(--bg-surface); padding: 0 20px; width: 30%; }
+        .flow-icon { width: 80px; height: 80px; background: var(--bg-dark); border: 2px solid var(--gold-primary); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.8rem; color: var(--gold-primary); margin: 0 auto 20px; box-shadow: 0 0 20px rgba(197,160,89,0.1);}
+        .flow-step h4 { font-size: 1.2rem; margin-bottom: 10px; }
+        .flow-step p { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* --- 服務模組 (A, B, C) --- */
+        .section { padding: 120px 10%; }
+        .section-header { text-align: center; margin-bottom: 70px; }
+        .section-label { color: var(--gold-primary); font-size: 0.85rem; letter-spacing: 3px; display: block; text-transform: uppercase; margin-bottom: 15px;}
+        .section-title { font-size: clamp(2.2rem, 4vw, 3rem); line-height: 1.3; }
+
+        .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 50px;}
+        .s-card { background: var(--bg-surface); padding: 50px 40px; border-top: 3px solid transparent; transition: var(--transition); position: relative;}
+        .s-card:hover { transform: translateY(-10px); border-top-color: var(--gold-primary); background: var(--bg-surface-light); }
+        .s-tag { position: absolute; top: 20px; right: 20px; font-family: 'Noto Serif TC', serif; font-size: 3rem; color: rgba(197,160,89,0.1); font-weight: 700; line-height: 1;}
+        .s-card h3 { font-size: 1.5rem; margin-bottom: 20px; margin-top: 10px; color: var(--gold-primary);}
+        .s-card p { color: var(--text-muted); font-weight: 300; margin-bottom: 25px; font-size: 0.95rem; line-height: 1.7;}
+        .s-card ul li { color: var(--text-main); font-size: 0.9rem; margin-bottom: 12px; padding-left: 20px; position: relative; }
+        .s-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--gold-primary); }
+
+        /* 商業模式循環提示 */
+        .synergy-box { background: linear-gradient(90deg, rgba(197, 160, 89, 0.1), transparent); border-left: 4px solid var(--gold-primary); padding: 30px; max-width: 800px; margin: 0 auto; display: flex; align-items: center; gap: 30px;}
+        .synergy-box i { font-size: 2.5rem; color: var(--gold-primary); }
+        .synergy-text h4 { font-size: 1.2rem; margin-bottom: 5px; }
+        .synergy-text p { color: var(--text-muted); font-size: 0.95rem; margin: 0;}
+
+        /* --- 創辦人與影響力平台 --- */
+        .founder-section { background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,0.05); }
+        .founder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .founder-info h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        .founder-info .role { color: var(--gold-primary); letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 30px; display: block;}
+        .founder-info p { color: var(--text-muted); margin-bottom: 20px; font-weight: 300; }
         
-        .btn-primary {
-            background: var(--brand-red); color: white; padding: 18px 40px; font-size: 1.1rem;
-            letter-spacing: 2px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 15px;
-            transition: all 0.4s ease;
+        /* 推廣平台 (Promotion Platforms) */
+        .platform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+        .platform-card { background: var(--bg-surface); padding: 25px; border: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 15px; transition: 0.3s; }
+        .platform-card:hover { border-color: var(--gold-primary); }
+        .platform-card i { font-size: 1.8rem; color: var(--gold-primary); }
+        .platform-card div strong { display: block; font-size: 1rem; }
+        .platform-card div span { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* --- 聯絡區塊 --- */
+        .contact-section { background: var(--bg-surface); }
+        .contact-wrapper { max-width: 800px; margin: 0 auto; text-align: center; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; text-align: left;}
+        .form-input { width: 100%; background: var(--bg-dark); border: 1px solid rgba(255,255,255,0.1); padding: 16px; color: white; font-family: inherit;}
+        .form-input:focus { outline: none; border-color: var(--gold-primary); }
+        .form-full { grid-column: 1 / -1; }
+        .btn-submit { width: 100%; background: var(--gold-primary); color: var(--bg-dark); border: none; padding: 18px; font-weight: 600; cursor: pointer; letter-spacing: 2px; margin-top: 10px;}
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 0.85rem;}
+
+        @media (max-width: 992px) {
+            .flow-container { flex-direction: column; gap: 40px; }
+            .flow-container::before { display: none; }
+            .flow-step { width: 100%; }
+            .service-grid, .founder-grid, .platform-grid { grid-template-columns: 1fr; }
+            .synergy-box { flex-direction: column; text-align: center; }
         }
-        .btn-primary:hover { background: #b81d1d; padding-right: 30px; padding-left: 50px; }
-
-        /* --- 關於贏想與創辦人 (PDF 內容) --- */
-        .about-section { padding: 120px 10%; background: var(--brand-navy); border-top: 1px solid rgba(255,255,255,0.05); }
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .about-text h2 { font-size: 2.8rem; margin-bottom: 30px; line-height: 1.3; }
-        .about-text h2 span { color: var(--brand-red); font-style: italic; }
-        .about-text p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 20px; font-weight: 300; }
-        
-        .founder-box { background: var(--brand-navy-light); padding: 50px; border-left: 4px solid var(--brand-red); position: relative; }
-        .founder-box h3 { font-size: 1.8rem; margin-bottom: 5px; }
-        .founder-box .title { color: var(--brand-red); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 25px; display: block;}
-        .founder-list { list-style: none; color: var(--text-muted); font-weight: 300; }
-        .founder-list li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 15px; }
-        .founder-list i { color: var(--gold-accent); margin-top: 6px; font-size: 0.8rem; }
-
-        /* --- 核心服務區塊 (PDF 內容) --- */
-        .services-section { padding: 120px 5%; background: #070D1F; /* 比主背景更深一點的藍 */ }
-        .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { font-size: 3rem; }
-        .section-header p { color: var(--brand-red); letter-spacing: 3px; font-size: 0.9rem; margin-top: 15px; text-transform: uppercase; }
-
-        .service-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1300px; margin: 0 auto; }
-        .card { 
-            background: var(--brand-navy); padding: 60px 40px; 
-            border: 1px solid rgba(255,255,255,0.05); transition: 0.4s;
-            position: relative; overflow: hidden;
-        }
-        .card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
-            background: var(--brand-red); transform: scaleX(0); transform-origin: left; transition: 0.4s;
-        }
-        .card:hover { transform: translateY(-10px); background: var(--brand-navy-light); border-color: rgba(255,255,255,0.1); }
-        .card:hover::before { transform: scaleX(1); }
-        .card i { font-size: 40px; color: var(--text-light); margin-bottom: 30px; opacity: 0.5; }
-        .card h3 { font-size: 1.8rem; margin-bottom: 20px; }
-        .card p { color: var(--text-muted); font-weight: 300; font-size: 1rem; line-height: 1.8; }
-        .card ul { list-style: none; margin-top: 25px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); }
-        .card ul li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; }
-        .card ul li::before { content: '•'; color: var(--brand-red); margin-right: 10px; }
-
-        /* --- 高端聯絡表單 --- */
-        .contact-section { padding: 120px 10%; background: var(--brand-navy); }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; max-width: 1200px; margin: 0 auto; }
-        .contact-info h2 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; }
-        .contact-info p { color: var(--text-muted); font-size: 1.2rem; font-weight: 300; margin-bottom: 40px; }
-        
-        .form-group { margin-bottom: 30px; }
-        .form-input { 
-            width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.2);
-            padding: 15px 0; color: white; font-size: 1.1rem; font-family: inherit; transition: 0.3s;
-        }
-        .form-input:focus { outline: none; border-bottom-color: var(--brand-red); }
-        .form-input::placeholder { color: rgba(255,255,255,0.3); font-weight: 300; }
-        
-        .btn-submit {
-            background: transparent; color: white; border: 1px solid var(--brand-red);
-            padding: 15px 40px; font-size: 1.1rem; letter-spacing: 2px; cursor: pointer;
-            transition: 0.4s; display: inline-block; margin-top: 20px; width: 100%;
-        }
-        .btn-submit:hover { background: var(--brand-red); }
-
-        footer { text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 0.85rem; letter-spacing: 1px; }
-
-        /* 簡單的進場淡入動畫 */
-        .fade-in { animation: fadeIn 1.5s ease forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">IN <span>WIN</span>spiration</div>
+        <a href="#" class="logo">IN <span>WIN</span>spiration</a>
         <nav class="nav-links">
-            <a href="#about">關於贏想</a>
-            <a href="#services">專案服務</a>
+            <a href="#logic">核心思維</a>
+            <a href="#services">交付項目</a>
+            <a href="#founder">創辦人與平台</a>
             <a href="#contact" class="btn-nav">啟動對話</a>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="hero-content fade-in">
-            <span class="hero-tagline">Empower Your Moment of Glory</span>
-            <h1>助攻品牌與企業家的<br>榮耀時刻</h1>
-            <p>我們從組織結構與決策脈絡出發，結合品牌溝通的整體視角，協助企業在關鍵時刻，擬定並落實內外部對話策略。</p>
-            <a href="#contact" class="btn-primary">贏戰市場，放大影響 <i class="fas fa-arrow-right"></i></a>
+        <div class="hero-content">
+            <div class="logic-tag">UNDERLYING LOGIC</div>
+            <h1>鎖定一人群，聚焦一場景<br>擊穿一痛點，<span>提供一解決方案</span></h1>
+            <p>我們從個人品牌到公司品牌，以品牌思維為核心（統一性、延續性、差異性），助攻企業與領導者在關鍵時刻贏戰市場，放大影響。</p>
+            <a href="#contact" class="btn-primary">探索整合方案 <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
 
-    <section id="about" class="about-section">
-        <div class="about-grid">
-            <div class="about-text">
-                <h2>全線式經營視角<br><span>橫跨顧問與實戰</span></h2>
-                <p>我們以推助國內潛力企業飛躍成長、邁向新里程碑為志業。期許成為客戶專業、信賴的事業夥伴。</p>
-                <p>在成長階段與變動環境之中，我們不只提供策略，更協助凝聚團隊共識，確保策略落地執行。</p>
+    <section id="logic" class="flow-section">
+        <h2 class="flow-title serif">品牌思維的 <span>超級能力</span> (Superpower)</h2>
+        <div class="flow-container">
+            <div class="flow-step">
+                <div class="flow-icon"><i class="fas fa-search-location"></i></div>
+                <h4 class="serif">1. 自我覺察 (Self-Awareness)</h4>
+                <p>透過 Lumina 測評與深度諮詢，釐清個人特質與企業文化的真實樣貌，找回職場與家庭的平衡起點。</p>
             </div>
-            <div class="founder-box">
-                <span class="title">FOUNDER & CEO</span>
-                <h3>林易萱 Claudia</h3>
-                <p style="color:var(--text-muted); margin-bottom:20px; font-size:0.9rem;">#品牌溝通顧問 #贏想力教練</p>
-                <ul class="founder-list">
-                    <li><i class="fas fa-diamond"></i> 近20年實戰歷練，歷任跨國顧問公司、上市櫃高階經理人</li>
-                    <li><i class="fas fa-diamond"></i> 曾任台灣奧美集團總監、瓦城泰統集團品牌行銷協理</li>
-                    <li><i class="fas fa-diamond"></i> 具備全方位經營視野與落地執行力，服務跨國及本土企業</li>
-                </ul>
+            <div class="flow-step">
+                <div class="flow-icon"><i class="fas fa-project-diagram"></i></div>
+                <h4 class="serif">2. 連結他人 (Connecting)</h4>
+                <p>將覺察轉化為溝通策略。優化組織架構、導入 OKR，讓內部團隊與外部市場產生具備高度共識的深度連結。</p>
+            </div>
+            <div class="flow-step">
+                <div class="flow-icon"><i class="fas fa-hands-helping"></i></div>
+                <h4 class="serif">3. 共好共創 (Co-Creation)</h4>
+                <p>不再單打獨鬥。作為您的戰略幕僚與共享 CGO，我們陪跑落地專案，達成企業與個人的雙贏 (Win-Win) 榮耀。</p>
             </div>
         </div>
     </section>
 
-    <section id="services" class="services-section">
+    <section id="services" class="section">
         <div class="section-header">
-            <h2>WHAT WE DO</h2>
-            <p>核心服務與專案執行</p>
+            <span class="section-label">Delivery Items</span>
+            <h2 class="section-title">專業交付項目</h2>
         </div>
-        <div class="service-cards">
-            <div class="card">
-                <i class="fas fa-chess-knight"></i>
-                <h3>成長策略諮詢</h3>
-                <p>我們可以是企業的戰略幕僚與共享 CGO (首席增長官)，為您打磨市場溝通與商務發展。</p>
+        
+        <div class="service-grid">
+            <div class="s-card">
+                <div class="s-tag">A</div>
+                <h3>課程培訓及工作坊</h3>
+                <p>針對企業創辦人、高階主管及核心團隊，提供具備實戰價值的培訓方案。</p>
                 <ul>
-                    <li>人才發展與企業文化深化</li>
-                    <li>發言人訓練與 CXO 個人品牌形塑</li>
-                    <li>合作資源引薦與募資計畫撰擬</li>
+                    <li>團隊領導與目標管理</li>
+                    <li>品牌故事力與溝通技巧</li>
+                    <li>1on1 發言人與媒體應對訓練</li>
+                    <li>危機公關實戰演練</li>
                 </ul>
             </div>
-            <div class="card">
-                <i class="fas fa-users-cog"></i>
-                <h3>團隊陪跑教練</h3>
-                <p>從體質調理到強化動機，我們陪伴團隊優化組織架構，確保目標管理制度有效運作。</p>
+            
+            <div class="s-card">
+                <div class="s-tag">B</div>
+                <h3>Lumina 測評解析</h3>
+                <p>英國全球 50 國企業採用的創新心理學工具，注重個體差異，支持適性發展。</p>
                 <ul>
-                    <li>組織架構與職涯規劃優化</li>
-                    <li>目標管理制度 (OKR) 導入</li>
-                    <li>共識營與培訓計畫企劃執行</li>
+                    <li>創業家一對一特質諮詢</li>
+                    <li>團隊特質分析與光譜掃描</li>
+                    <li>個人與團隊有效行動發展</li>
+                    <li>Lumina Spark 官方認證解析</li>
                 </ul>
             </div>
-            <div class="card">
-                <i class="fas fa-handshake"></i>
-                <h3>專案執行夥伴</h3>
-                <p>深入企業內部，與總管理處或人資部門協作，將策略轉化為可落地的各項 SOP 與專案。</p>
+
+            <div class="s-card">
+                <div class="s-tag">C</div>
+                <h3>專案執行與成長策略</h3>
+                <p>您的戰略幕僚與共享 CGO，深入內部總管理處或人資部門協作落地。</p>
                 <ul>
+                    <li>組織架構優化與 OKR 導入</li>
                     <li>企業榮譽獎項/補助申請</li>
-                    <li>代理人制度與管理職級招聘</li>
-                    <li>特殊跨部門專案企劃與執行</li>
+                    <li>人才選訓用留 SOP 建立</li>
+                    <li>特殊商務專案企劃與執行</li>
                 </ul>
+            </div>
+        </div>
+
+        <div class="synergy-box">
+            <i class="fas fa-sync-alt"></i>
+            <div class="synergy-text">
+                <h4 class="serif">整合商業賦能模型 (Business Model)</h4>
+                <p>單一解方無法擊穿痛點。我們透過 <strong>測評解析 (B)</strong> 確立團隊體質，搭配 <strong>客製課程 (A)</strong> 凝聚共識，最終導向深度的 <strong>專案執行 (C)</strong>，形成驅動企業持續成長的正向循環。</p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h2>Let's build <br>something <br>great.</h2>
-                <p>準備好迎接企業的下一個榮耀時刻了嗎？<br>與我們的顧問團隊展開初步對話。</p>
-                <div style="margin-top: 40px; color: var(--text-muted);">
-                    <p><i class="fas fa-envelope" style="color:var(--brand-red); margin-right: 15px;"></i> hello@winspiration.com.tw</p>
+    <section id="founder" class="section founder-section">
+        <div class="founder-grid">
+            <div class="founder-info">
+                <span class="section-label">Founder & Promotion</span>
+                <h2 class="serif">林易萱 Claudia</h2>
+                <span class="role">#品牌溝通顧問 #贏想力教練</span>
+                <p>近 20 年實戰歷練，橫跨顧問、企業與創業實戰。曾任台灣奧美集團總監、瓦城泰統集團品牌行銷協理，現兼任財經M平方品牌長及影響力品牌學院學務長。</p>
+                <p>我們深信，強大的「個人品牌」是驅動「公司品牌」信任度的基石。透過多元平台的內容輸出，我們持續為市場帶來啟發 (Inspiration)。</p>
+                
+                <div class="platform-grid">
+                    <a href="#" class="platform-card">
+                        <i class="fas fa-microphone-alt"></i>
+                        <div>
+                            <strong>Podcast 節目</strong>
+                            <span>ME&WE調色盤 / 旅遊瞭望台</span>
+                        </div>
+                    </a>
+                    <a href="#" class="platform-card">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <strong>LinkedIn</strong>
+                            <span>專業觀點與商業洞察</span>
+                        </div>
+                    </a>
+                    <a href="#" class="platform-card">
+                        <i class="fas fa-pen-nib"></i>
+                        <div>
+                            <strong>Vocus 方格子</strong>
+                            <span>品牌策略深度專欄</span>
+                        </div>
+                    </a>
+                    <a href="#" class="platform-card">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <strong>WINspiration</strong>
+                            <span>企業官網與服務入口</span>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <div class="contact-form">
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <input type="text" class="form-input" placeholder="您的姓名 / 職稱" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-input" placeholder="企業名稱">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-input" placeholder="工作 Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-input" rows="4" placeholder="請簡述您目前面臨的挑戰或需要的協助..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">送出諮詢申請</button>
-                </form>
-            </div>
+            <div style="background: url('company-bg.jpg') center/cover; height: 100%; min-height: 400px; border-radius: 8px; opacity: 0.8;">
+                </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <div class="contact-wrapper">
+            <span class="section-label">Take Action</span>
+            <h2 class="section-title serif">開啟您的專屬解決方案</h2>
+            <p style="color: var(--text-muted); margin-top: 15px;">無論您需要 Lumina 個人測評，或是企業深度的策略專案，請留下資訊，我們將盡快與您聯繫。</p>
+            
+            <form action="#" method="POST" class="form-grid">
+                <input type="text" class="form-input" placeholder="姓名 / 職稱" required>
+                <input type="text" class="form-input" placeholder="企業名稱">
+                <input type="email" class="form-input form-full" placeholder="工作 Email" required>
+                <select class="form-input form-full" required>
+                    <option value="" disabled selected>您感興趣的交付項目？</option>
+                    <option value="A">A) 課程培訓及工作坊</option>
+                    <option value="B">B) Lumina Spark 測評解析</option>
+                    <option value="C">C) 專案執行與成長策略</option>
+                    <option value="All">希望了解整合方案</option>
+                </select>
+                <textarea class="form-input form-full" rows="4" placeholder="請描述您的現況挑戰或想擊穿的痛點..." required></textarea>
+                <button type="submit" class="btn-submit form-full">提交需求，共好共創</button>
+            </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 贏想品牌策略有限公司 WINspiration Brand and Marketing Consultancy Ltd.</p>
+        <p>&copy; 2026 贏想品牌策略 WINspiration Brand and Marketing Consultancy Ltd.</p>
     </footer>
 
 </body>
